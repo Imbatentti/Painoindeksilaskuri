@@ -1,22 +1,22 @@
-function laskePI() {
-	var paino = document.piForm.paino.value
-	var pituus = document.piForm.pituus.value
-		if(paino > 0 && pituus > 0){	
-			var lopPainoindeksi = paino/(pituus/100*pituus/100)
-			document.piForm.painoindeksi.value = lopPainoindeksi
+function countBMI() {
+	var weight = document.bmiForm.weight.value
+	var height = document.bmiForm.height.value
+		if(weight > 0 && height > 0){	
+			var finalBMI = weight/(height/100*height/100)
+			document.bmiForm.bmi.value = finalBMI
 				
-				if(lopPainoindeksi < 18.5){
-					document.piForm.luokitus.value = "Olet alipainoinen."
-					document.piForm.face.src = "img/sadface.jpg"
+				if(finalBMI < 18.5){
+					document.bmiForm.verdict.value = "Olet alipainoinen."
+					document.bmiForm.face.src = "img/sadface.jpg"
 				}
-				else if(lopPainoindeksi > 18.5 && lopPainoindeksi < 25){
-					document.piForm.luokitus.value = "Olet normaalipainoinen."
-					document.piForm.face.src = "img/happyface.jpg"
+				else if(finalBMI > 18.5 && finalBMI < 25){
+					document.bmiForm.verdict.value = "Olet normaalipainoinen."
+					document.bmiForm.face.src = "img/happyface.jpg"
 					
 				}
-				else if(lopPainoindeksi > 25){
-					document.piForm.luokitus.value = "Olet ylipainoinen."
-					document.piForm.face.src = "img/sadface.jpg"
+				else if(finalBMI > 25){
+					document.bmiForm.verdict.value = "Olet ylipainoinen."
+					document.bmiForm.face.src = "img/sadface.jpg"
 				}
 		}
 		else{
